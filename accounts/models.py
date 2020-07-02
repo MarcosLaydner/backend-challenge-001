@@ -26,6 +26,8 @@ from django.utils.translation import ugettext as _
 ###
 class User(AbstractUser):
     # Override user model here
+    class Meta:
+        ordering = ['id']
     pass
 
 

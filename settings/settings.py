@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
+
     # Rest Framework
     'rest_framework',
     'rest_framework.authtoken',
@@ -89,6 +90,7 @@ INSTALLED_APPS = [
 
     # Applications
     'accounts',
+    'users',
 ]
 
 SITE_ID = 1

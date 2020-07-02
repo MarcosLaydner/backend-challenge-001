@@ -4,6 +4,7 @@ backend-challenge-001 URL Configuration
 ###
 # Libraries
 ###
+from django.urls import path
 from django.conf.urls import url, include
 from django.contrib import admin
 
@@ -21,4 +22,5 @@ urlpatterns = [
 
     # Applications
     url(r'^', include('accounts.urls')),
+    url(r'^', include('users.urls')),
 ]
