@@ -1,10 +1,11 @@
 from rest_framework import serializers
-from topics.models import Topic
+from comments.models import Comment
 
 
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
-    author = serializers.ReadOnlyField(source='author.username', related_name='comment_author')
+    author = serializers.ReadOnlyField(source='author.username')
+    post = serializers.ReadOnlyField(source='post.title')
 
     class Meta:
-        model = Topic
+        model = Comment
         fields = ['title', 'author', 'content', 'created_at', 'updated_at', 'post']
