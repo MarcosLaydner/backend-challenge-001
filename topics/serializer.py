@@ -2,7 +2,8 @@ from rest_framework import serializers
 from topics.models import Topic
 
 
-class TopicSerializer(serializers.ModelSerializer):
+class TopicSerializer(serializers.HyperlinkedModelSerializer):
+    author = serializers.ReadOnlyField(source='author.username')
 
     class Meta:
         model = Topic
