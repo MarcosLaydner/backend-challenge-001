@@ -1,14 +1,9 @@
-from rest_framework import permissions
-from rest_framework import viewsets
-
 from comments.models import Comment
 from comments.serializer import CommentSerializer
-from settings.permissions import IsOwnerOrReadOnly
+from helpers.views import CommonView
 
 
-class CommentViewSet(viewsets.ModelViewSet):
+class CommentViewSet(CommonView):
 
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly,
-                          IsOwnerOrReadOnly]

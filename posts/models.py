@@ -7,4 +7,4 @@ class Post(CommonInfo):
     Topic = models.ForeignKey('topics.Topic', related_name='posts', default=1, on_delete=models.CASCADE)
 
     class Meta:
-        ordering = ['created']
+        ordering = ['created_at']

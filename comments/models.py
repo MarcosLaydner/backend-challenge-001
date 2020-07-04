@@ -7,4 +7,4 @@ class Comment(CommonInfo):
     post = models.ForeignKey('posts.Post', related_name='comments', default=1, on_delete=models.CASCADE)
 
     class Meta:
-        ordering = ['created']
+        ordering = ['created_at']

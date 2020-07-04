@@ -2,7 +2,7 @@ from rest_framework import serializers
 from posts.models import Post
 
 
-class CommentSerializer(serializers.HyperlinkedModelSerializer):
+class PostSerializer(serializers.HyperlinkedModelSerializer):
     author = serializers.ReadOnlyField(source='author.username')
     topic = serializers.ReadOnlyField(source='topic.title')
 
