@@ -1,5 +1,3 @@
-from rest_framework_nested.viewsets import NestedViewSetMixin
-
 from helpers.views import RestrictedView
 from topics.models import Topic
 from topics.serializer import TopicSerializer
