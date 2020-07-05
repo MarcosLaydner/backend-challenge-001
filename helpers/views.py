@@ -3,11 +3,8 @@ from rest_framework import viewsets
 from settings.permissions import IsOwnerOrReadOnly
 
 
-class CommonView(viewsets.ModelViewSet):
+class RestrictedView(viewsets.ModelViewSet):
 
     permission_classes = [permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly]
-
-    def perform_create(self, serializer):
-        serializer.save(author=self.request.user)
 

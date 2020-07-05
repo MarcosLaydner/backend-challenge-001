@@ -25,7 +25,7 @@ class TimestampModel(models.Model):
 
 class CommonInfo(models.Model):
     title = models.CharField(max_length=64, blank=True, default='')
-    author = models.ForeignKey('accounts.User', default=1, on_delete=models.CASCADE)
+    author = models.ForeignKey('accounts.User', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

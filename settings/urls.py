@@ -17,8 +17,8 @@ from helpers.health_check_view import health_check
 # URLs
 ###
 
-router = routers.SimpleRouter()
-router.register(r'topics', TopicViewSet)
+router = routers.DefaultRouter()
+router.register(r'topics', TopicViewSet, basename='topics')
 
 topics_router = routers.NestedSimpleRouter(router, r'topics', lookup='topic')
 topics_router.register(r'posts', PostViewSet, basename='posts')
